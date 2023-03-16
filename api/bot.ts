@@ -4,6 +4,7 @@ import { cache } from "./modules/cache/index.js";
 import { chatBot } from "./modules/bingchat/index.js";
 import { clearInterval } from "timers";
 import { ChatMessage } from "bing-chat";
+import { startMinimalWebServer } from "./modules/web/index.js";
 
 const bot = new Bot(process.env.BOT_TOKEN || "BOT TOKEN HERE");
 
@@ -55,7 +56,9 @@ bot.on("message", async (ctx) => {
   }, 7000);
 });
 
+startMinimalWebServer();
 export default webhookCallback(bot, "http");
+
 if (!process.env.WEBHOOK_MODE) {
   run(bot);
 }
