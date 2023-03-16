@@ -56,5 +56,6 @@ bot.on("message", async (ctx) => {
 });
 
 export default webhookCallback(bot, "http");
-
-run(bot);
+if (!process.env.WEBHOOK_MODE) {
+  run(bot);
+}
