@@ -1,4 +1,5 @@
-import { Bot } from "grammy";
+import { Bot, webhookCallback } from "grammy";
+import { run } from "@grammyjs/runner";
 import { cache } from "./modules/cache/index.js";
 import { chatBot } from "./modules/bingchat/index.js";
 import { clearInterval } from "timers";
@@ -54,4 +55,6 @@ bot.on("message", async (ctx) => {
   }, 7000);
 });
 
-bot.start();
+run(bot);
+
+export default webhookCallback(bot, "http");

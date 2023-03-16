@@ -2,7 +2,7 @@
   "name": "bango",
   "version": "0.0.1",
   "description": "Telegram chat bot powered by Bing",
-  "main": "app/index.js",
+  "main": "build/bot.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/dickymuliafiqri/Bango#readme",
   "dependencies": {
     "@grammyjs/conversations": "^1.1.1",
+    "@grammyjs/runner": "^1.0.4",
     "@types/node": "^18.15.3",
     "bing-chat": "^0.2.3",
     "dotenv": "^16.0.3",
